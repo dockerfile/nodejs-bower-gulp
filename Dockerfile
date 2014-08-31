@@ -10,9 +10,6 @@ FROM dockerfile/nodejs
 # Install Bower & Gulp
 RUN npm install -g bower gulp
 
-# Define mountable directories.
-VOLUME ["/data"]
-
 # Define working directory.
 WORKDIR /data
 
