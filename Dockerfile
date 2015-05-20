@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/nodejs
+FROM zolweb/nodejs
 
 # Install Bower & Gulp
 RUN npm install -g bower gulp
