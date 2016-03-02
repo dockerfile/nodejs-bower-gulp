@@ -1,17 +1,13 @@
-#
-# Node.js w/ Bower & Gulp Dockerfile
-#
-# https://github.com/dockerfile/nodejs-bower-gulp
-#
+FROM zolweb/nodejs:node-4.3_npm-3.7
 
-# Pull base image.
-FROM zolweb/nodejs
+RUN apt-get update && apt-get install -yyq \
+  sudo \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Install Bower & Gulp
-RUN npm install -g bower gulp
+RUN npm install -g bower gulp \
+ && npm cache clean -f
 
-# Define working directory.
 WORKDIR /data
 
-# Define default command.
 CMD ["bash"]
